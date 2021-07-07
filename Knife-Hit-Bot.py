@@ -63,9 +63,7 @@ while True:
     # cv2.waitKey()
     # cv2.destroyAllWindows()
 
-
     cont += 1
-
     if cont == 1000:
         break
 
