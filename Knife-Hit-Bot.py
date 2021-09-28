@@ -16,7 +16,7 @@ searching3 = flip_knife_45_img
 cont = 0
 # Game loop
 while True:
-    print("here we go again")
+    # print("here we go again")
 
     time1 = time.time()
     # Take the screenshot and save it
@@ -37,12 +37,13 @@ while True:
     min_val3, max_val3, min_loc3, max_loc3 = cv2.minMaxLoc(result3)
     print(max_val3)
 
+    # Dispara
     if max_val1 <= 0.7 and max_val2 <= 0.53 and max_val3 <=0.53:
         pyautogui.click()
-        print("dispara locoooo")
-
+        # print("dispara locoooo")
+    
     else:
-        print("cuidadooooo voroooooo")
+        # print("cuidadooooo voroooooo")
     
     time2 = time.time()
     print(f"tiempo: {time2-time1}")
