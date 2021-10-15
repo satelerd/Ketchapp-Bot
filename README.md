@@ -1,5 +1,5 @@
 # Ketchapp-Bot
 
-Bot que juega a Knife Hit (juego de Ketchapp) de manera autónoma usando Computer Vision II.
+This is a bot that play Knife Hit (a Ketchapp game) autonomously by using Computer Vision II.
 
 https://www.minijuegos.com/juego/knife-hit
