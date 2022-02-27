@@ -43,9 +43,8 @@ searching3 = flip_knife_45_img
 cont = 0
 # Game loop
 while True:
-    print("here we go again")
-
     time1 = time.time()
+
     # Take the screenshot and save it
     ss = pyautogui.screenshot(region=region)
     ss.save(rf"{path}\screenshots\ss1.png")
@@ -59,25 +58,22 @@ while True:
         ss1.astype(np.float32), searching1.astype(np.float32), cv2.TM_CCOEFF_NORMED
     )
     min_val1, max_val1, min_loc1, max_loc1 = cv2.minMaxLoc(result1)
-    print(max_val1)
 
     result2 = cv2.matchTemplate(ss1, searching2, cv2.TM_CCOEFF_NORMED)
     min_val2, max_val2, min_loc2, max_loc2 = cv2.minMaxLoc(result2)
-    print(max_val2)
 
     result3 = cv2.matchTemplate(ss1, searching3, cv2.TM_CCOEFF_NORMED)
     min_val3, max_val3, min_loc3, max_loc3 = cv2.minMaxLoc(result3)
-    print(max_val3)
 
     if max_val1 <= 0.7 and max_val2 <= 0.53 and max_val3 <= 0.53:
         pyautogui.click()
-        print("dispara locoooo")
+        print("shoot the knife")
 
     else:
-        print("cuidadooooo voroooooo")
+        print("dont shoot the knife")
 
     time2 = time.time()
-    print(f"tiempo: {time2-time1}")
+    print(f"time: {time2-time1}")
     time.sleep(0.1)
 
     if preview:
