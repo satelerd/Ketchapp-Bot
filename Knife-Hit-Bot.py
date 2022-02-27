@@ -3,9 +3,18 @@ import pyautogui
 import numpy as np
 import time
 
+"""
+THINGS TO MODIFY
+"""
 # PATH to Ketchapp-Bot folder
 path = r"C:\Users\satel\OneDrive\code\Artilujios\Ketchapp-Bot"
-# print(f"{path}\img\not_knife2.png")
+
+# Preview where the screenshot is taken and what cv2 is seeing
+preview = True  # True or False
+region = (700, 550, 550, 150)  # update this to your screenshot location
+"""
+END OF THINGS TO MODIFY
+"""
 
 # Uploading images
 not_knife_img2 = cv2.imread(
@@ -38,9 +47,7 @@ while True:
 
     time1 = time.time()
     # Take the screenshot and save it
-    ss = pyautogui.screenshot(
-        region=(700, 550, 550, 150)
-    )  # UPDATE THIS TO YOUR SCREENSHOT LOCATION
+    ss = pyautogui.screenshot(region=region)
     ss.save(rf"{path}\screenshots\ss1.png")
     ss1 = cv2.imread(
         rf"{path}\screenshots\ss1.png",
@@ -73,20 +80,20 @@ while True:
     print(f"tiempo: {time2-time1}")
     time.sleep(0.1)
 
-    # Creating the rectagle where found the img and display it
-    w = searching1.shape[1]
-    h = searching1.shape[0]
-    cv2.rectangle(ss1, max_loc1, (max_loc1[0] + w, max_loc1[1] + h), (0, 0, 255), 2)
-    w = searching2.shape[1]
-    h = searching2.shape[0]
-    cv2.rectangle(ss1, max_loc2, (max_loc2[0] + w, max_loc2[1] + h), (0, 0, 255), 2)
-    w = searching3.shape[1]
-    h = searching3.shape[0]
-    cv2.rectangle(ss1, max_loc3, (max_loc3[0] + w, max_loc3[1] + h), (0, 0, 255), 2)
-
-    cv2.imshow("img", ss1)
-    cv2.waitKey()
-    cv2.destroyAllWindows()
+    if preview:
+        # Creating the rectagle where found the img and display it
+        w = searching1.shape[1]
+        h = searching1.shape[0]
+        cv2.rectangle(ss1, max_loc1, (max_loc1[0] + w, max_loc1[1] + h), (0, 0, 255), 2)
+        w = searching2.shape[1]
+        h = searching2.shape[0]
+        cv2.rectangle(ss1, max_loc2, (max_loc2[0] + w, max_loc2[1] + h), (0, 0, 255), 2)
+        w = searching3.shape[1]
+        h = searching3.shape[0]
+        cv2.rectangle(ss1, max_loc3, (max_loc3[0] + w, max_loc3[1] + h), (0, 0, 255), 2)
+        cv2.imshow("img", ss1)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
 
     cont += 1
     if cont == 1000:
