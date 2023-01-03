@@ -8,7 +8,7 @@ THINGS TO MODIFY
 """
 
 # For testing where the screenshot is taken use preview = True
-preview = True  # True or False
+preview = False  # True or False
 region = (700, 550, 550, 150)  # update this to your screenshot location
 
 """
