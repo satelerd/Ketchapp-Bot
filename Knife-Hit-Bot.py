@@ -6,15 +6,17 @@ import time
 """
 THINGS TO MODIFY
 """
-# PATH to Ketchapp-Bot folder
-path = r"C:\Users\satel\OneDrive\code\Artilujios\Ketchapp-Bot"
 
-# Preview where the screenshot is taken and what cv2 is seeing
+# For testing where the screenshot is taken use preview = True
 preview = True  # True or False
 region = (700, 550, 550, 150)  # update this to your screenshot location
+
 """
 END OF THINGS TO MODIFY
 """
+
+# PATH to Ketchapp-Bot folder
+path = "."
 
 # Uploading images
 not_knife_img2 = cv2.imread(
